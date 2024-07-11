@@ -39,7 +39,6 @@ class Extractor(object):
         with open(self.log_file, 'a') as f:
             f.write(log_str + '\n')
 
-
     def extract(self):
         batch_time = utils.AverageMeter()
 
