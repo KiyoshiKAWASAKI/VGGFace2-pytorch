@@ -21,21 +21,18 @@ include_top = False
 
 # Image directory contains 90 morphs
 # In each morph, there is enriched_tail and uniform
-img_dir = "/afs/crc.nd.edu/group/cvrl/scratch_49/jhuang24/" \
-          "face_morph_v4_5_sets_processed"
+img_dir = "/afs/crc.nd.edu/group/cvrl/scratch_49/jhuang24/face_morph_v4_5_sets_processed"
 
 
 # Resnet50
-# save_embed_dir = "/project01/cvrl/jhuang24/" \
-#                  "face_morph_v4_5_sets_features/vgg_resnet"
-# model_path = "/project01/cvrl/jhuang24/vgg_models/" \
-#              "resnet50_scratch_weight.pkl"
-# model_name = "resnet"
+save_embed_dir = "/project01/cvrl/jhuang24/face_morph_v4_5_sets_features/vgg_resnet"
+model_path = "/project01/cvrl/jhuang24/vgg_models/resnet50_scratch_weight.pkl"
+model_name = "resnet"
 
 # senet50
-save_embed_dir = "/project01/cvrl/jhuang24/face_morph_v4_5_sets_features/vgg_senet"
-model_path = "/project01/cvrl/jhuang24/vgg_models/senet50_scratch_weight.pkl"
-model_name = "senet"
+# save_embed_dir = "/project01/cvrl/jhuang24/face_morph_v4_5_sets_features/vgg_senet"
+# model_path = "/project01/cvrl/jhuang24/vgg_models/senet50_scratch_weight.pkl"
+# model_name = "senet"
 
 
 # CUDA
@@ -77,7 +74,8 @@ all_morphs = os.listdir(img_dir)
 # Loop over each morph
 for one_morph in tqdm(all_morphs):
     # For each morphs, loop through uniform and enriched tail
-    all_types = os.listdir(os.path.join(img_dir, one_morph))
+    # all_types = os.listdir(os.path.join(img_dir, one_morph))
+    all_types = ["long_tail"]
 
     for one_type in all_types:
         all_imgs = os.listdir(os.path.join(img_dir, one_morph, one_type))
